@@ -1,10 +1,10 @@
 <div class="main">
-    <div class="m_block">
-        <div class="auth" [@anShow]>
+    <div class="m_block" [@aShow]>
+        <div class="auth">
             <span class="auth_header">Регистрация</span>
             <div class="input_box">
                 <!-- <input #input (focus)="utils.inputShowActive(input)" (blur)="utils.inputHideActive(input)" [(ngModel)]="scope.newLoginInput" class="input_box_input" type="email" placeholder="Ваш email"> -->
-                <input #input class="input_box_input" type="email" placeholder="E-mail">
+                <input #input class="input_box_input" maxlength="64" type="email" placeholder="E-mail">
                 <div class="input_box_line" [class.input_box_line-red]="isError">
                     <div class="input_box_line_1"></div>
                     <div class="input_box_line_2"></div>
@@ -13,7 +13,7 @@
             </div>
             <div class="input_box">
                 <!-- <input #input (focus)="utils.inputShowActive(input)" (blur)="utils.inputHideActive(input)" [(ngModel)]="scope.newLoginInput" class="input_box_input" type="email" placeholder="Ваш email"> -->
-                <input #input class="input_box_input" type="text" placeholder="Имя">
+                <input #input class="input_box_input" maxlength="32" type="text" placeholder="Имя">
                 <div class="input_box_line" [class.input_box_line-red]="isError">
                     <div class="input_box_line_1"></div>
                     <div class="input_box_line_2"></div>
@@ -38,15 +38,20 @@
                 </div>
                 <div class="input_box_error"><span *ngIf="isError">{{isError}}</span></div>
             </div>     
-            <div class="input_box">
-                <!-- <input #input (focus)="utils.inputShowActive(input)" (blur)="utils.inputHideActive(input)" [(ngModel)]="scope.newLoginInput" class="input_box_input" type="email" placeholder="Ваш email"> -->
-                <input #input class="input_box_input" type="tel" placeholder="Код защиты">
-                <div class="input_box_line" [class.input_box_line-red]="isError">
-                    <div class="input_box_line_1"></div>
-                    <div class="input_box_line_2"></div>
-                </div>
-                <div class="input_box_error"><span *ngIf="isError">{{isError}}</span></div>
-            </div>                                               
+            <div class="input_box-2"> 
+                <div class="input_box_inb-1">
+                    <!-- <input #input (focus)="utils.inputShowActive(input)" (blur)="utils.inputHideActive(input)" [(ngModel)]="scope.newLoginInput" class="input_box_input" type="email" placeholder="Ваш email"> -->
+                    <input #input class="input_box_input" maxlength="5" size="5" type="tel" placeholder="Код защиты">
+                    <div class="input_box_line" [class.input_box_line-red]="isError">
+                        <div class="input_box_line_1"></div>
+                        <div class="input_box_line_2"></div>
+                    </div>
+                    <div class="input_box_error"><span *ngIf="isError">{{isError}}</span></div>
+                </div>   
+                <div class="input_box_captcha">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAAAoCAMAAAAbk+L0AAAAP1BMVEUAAAAKTh6i5rZ/w5NVmWma3q42ekoITByM0KBvs4OW2qpcoHB3u4uAxJQtcUEhZTVqrn4LTx8qbj4zd0eJzZ1WFOJOAAAAAXRSTlMAQObYZgAAAcdJREFUeJzsmOeOgzAMgG1alPRHhVDe/11PDWTZGU4Y1enOElUJjv3hBQL+5VcKIuK3GZxgJNd6miQsjujiKE1Ti2byzhHh4hg1WTztx38Upa+UkafdOPwJJuuRvG6ASkIRo1CW1/U0iXsM/wIK7lfuYOGx2Ao6ZrypkniJLIBkGev5K8hzgAUJ1LIsdlm760gVQ5ge3KDyLE9Pk1GrwcRpWOy51jphxLjddvXHg7lRKtB4Fq5WQaFNbE91NoeQBKoWGacvjowPS245DwN5/rIHceFjXJqriAVYkXnJtn4HC9ohsrGsqwgmxJOyCIdiYUyEUoQoMmUWVw95mMZQVGyYUkJ+CfP9A0mnDAxBpRQvzYqNpIJyORpm+ajTNmvwkLEfmpjfEXa3SRW0hpPM3FImRTSyGFazhQkZV6VPiLKlJgcYoWLxYZ2pq0EUMMY4XwLtvJ+WP3mFm/4t1FUV5vhNjtDUczhmeGB3qbhPeCEcShdnEVl5i2x300A/CcD7LaM50l3yrSKW3WgvxJYt3bdNbt7yGKmq1d7fly/icXOxpEATU2GZ9+OAGEy/3bgf9/lEbGieZ3ucJ+mLTp+cEJm/Jj8BAAD///bcBRomIcKPAAAAAElFTkSuQmCC" alt="">
+                </div>  
+            </div>                                              
             <!-- <a href="" click-by-enter (click)="submitNewLoginForm($event)" class="auth_submit btn_type-1">Create Account</a> -->
             <a click-by-enter class="auth_submit btn_type-1">Зарегистрировать</a>
             <a routerLink='/auth/login' class="auth_extralink">Есть аккаунт? Авторизация</a>

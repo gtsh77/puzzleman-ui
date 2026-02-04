@@ -1,10 +1,10 @@
 <div class="main">
-    <div class="m_block">
-        <div class="auth" [@anShow]>
+    <div class="m_block" [@aShow]>
+        <div class="auth">
             <span class="auth_header">Авторизация</span>
             <div class="input_box">
                 <!-- <input #input (focus)="utils.inputShowActive(input)" (blur)="utils.inputHideActive(input)" [(ngModel)]="scope.loginInput" class="input_box_input" type="email" placeholder="Ваш email"> -->
-                <input #input class="input_box_input" type="email" placeholder="E-mail">
+                <input #input class="input_box_input" maxlength="64" type="email" placeholder="E-mail">
         
                 <div class="input_box_line" [class.input_box_line-red]="isError">
                     <div class="input_box_line_1"></div>
@@ -21,16 +21,22 @@
                     <div class="input_box_line_2"></div>
                 </div>
                 <div class="input_box_error"><span *ngIf="isError">{{isError}}</span></div>
-            </div>    
-            <div class="input_box">
-                <!-- <input #input (focus)="utils.inputShowActive(input)" (blur)="utils.inputHideActive(input)" [(ngModel)]="scope.newLoginInput" class="input_box_input" type="email" placeholder="Ваш email"> -->
-                <input #input class="input_box_input" type="tel" placeholder="Код защиты">
-                <div class="input_box_line" [class.input_box_line-red]="isError">
-                    <div class="input_box_line_1"></div>
-                    <div class="input_box_line_2"></div>
-                </div>
-                <div class="input_box_error"><span *ngIf="isError">{{isError}}</span></div>
-            </div>              
+            </div>   
+            <div class="input_box-2"> 
+                <div class="input_box_inb-1">
+                    <!-- <input #input (focus)="utils.inputShowActive(input)" (blur)="utils.inputHideActive(input)" [(ngModel)]="scope.newLoginInput" class="input_box_input" type="email" placeholder="Ваш email"> -->
+                    <input #input class="input_box_input" maxlength="5" size="5" type="tel" placeholder="Код защиты">
+                    <div class="input_box_line" [class.input_box_line-red]="isError">
+                        <div class="input_box_line_1"></div>
+                        <div class="input_box_line_2"></div>
+                    </div>
+                    <div class="input_box_error"><span *ngIf="isError">{{isError}}</span></div>
+                </div>   
+                <div class="input_box_captcha">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAAAoCAMAAAAbk+L0AAAAP1BMVEUAAABfTiHXxpnUw5ZlVCeejWCbil28q35pWCuxoHOejWDTwpWxoHN0YzZXRhmSgVR8az6qmWxzYjWUg1ZCMQQTelVzAAAAAXRSTlMAQObYZgAAAeVJREFUeJzUl/uusyAQxJnE2MSktcr7v+sXrbgDKzflqz37x6nHC/NjWBYw3wzgq3J/J37Hl2WI7N0QWyyuWPsbNJ8ROs/yqrqdRslnyyFnt34LmNfrUDZyO82Sf+VwBLuuW1kANHOmaBJFnMFq6t31yelXwjyKGr0I5dByLI80zcWAIG3pk6Z555o6iQETOAOYHMz7naA5RcEXkAEqSuYoy7l8kc6T9mpKwJps44zyYUt85TkjQip7JiZRT5vAQeYRGEbpTdPEMEFutfFJFH1nyCNHsz/d875visJNHSUNdR8+y/Ju3/fVLJkqBal3XlHerwbDDvI7fQXFxpKrmSTDs8w9HIaBSREOYF3qZuv3Xl6izkCxyMc1KAXhYGAUTLcnK4NyKjVm2eeqXi6X/Y7PYgqWrwY0AHRGdNBrBOH8HyrXvi9ihY+d2edWBOXZAkj+fqStteAaZ7jkxT15Pi/TsJrruKUlFeo3ypNlmSqoQN1XxgRwRRHs6nmZS1AIjvuBhFGpU8oSnnfKnPEqMLOFMHXTSJ93irLqozE7CLnv5e+1QjMW5/iiMs+ziTpSsmlPs4xj8exfdGb5Z5P2thIXS91Y83IopbeYl1gqI9Pzbx+FE3p3n8o5bkE5ztK2tvwLAAD//1aQBqnlvntFAAAAAElFTkSuQmCC" alt="">
+                </div>  
+            </div>
+                    
             <!-- <a href="" click-by-enter (click)="submitLoginForm($event)" class="auth_submit btn_type-1">Sign In</a> -->
             <a click-by-enter class="auth_submit btn_type-1">Авторизоваться</a>
             <a routerLink='/auth/register' class="auth_extralink">Нет аккаунта? Зарегистрировать</a>

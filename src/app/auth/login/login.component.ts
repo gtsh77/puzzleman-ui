@@ -1,11 +1,29 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import {
+  trigger,
+  style,
+  animate,
+  transition
+} from '@angular/animations';
 
 @Component({
   selector: 'app-login',
   imports: [RouterLink],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrl: './login.component.scss',
+  animations: [
+    trigger('aShow', [  	
+      transition('void => *', [
+        style({
+          opacity: '0'
+        }),
+        animate('250ms', style({
+          opacity: '1'
+        }))
+      ])
+    ])    
+  ],  
 })
 export class LoginComponent {
   public isError:boolean = false;

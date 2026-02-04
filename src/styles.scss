@@ -291,7 +291,8 @@ body {
 	}
 	.bz_title-a {
 		@extend %bz_title;
-		color: #ff9900;
+		//color: #ff9900;
+		color: #fff;
 	}
 	.bz_title-b {
 		@extend %bz_title;
@@ -315,7 +316,7 @@ body {
 			height: 11px;
 		}
 	.bz_profile {
-			color: #000;
+			color: #e4e5e7;
 			font-weight: 700;
 			font-size: 12px;		
 			text-decoration: underline;
@@ -368,7 +369,7 @@ body {
 		}
 		thead {
 			tr {
-				background-color: #444444;
+				background-color: #fb515d;
 				border-bottom: 1px solid #333333;
 			}
 			td {
@@ -380,13 +381,17 @@ body {
 				border-bottom: 1px solid #333333;
 				cursor: pointer;
 				&:nth-child(odd){
-					background-color: #777777;
+					background-color: #374357;
 				}
 				&:nth-child(even){
-					background-color: #7e7e7e;
+					background-color: #1c2e36;
 				}
 				&:hover {
-					background-color: #666;
+					background-color: #c8d0e0;
+					color: #000;
+					.bz_profile {
+						color: #000;
+					}
 				}
 			} 
 			td {
@@ -696,5 +701,34 @@ body {
 			opacity: 1;
 			background: $watermelon;
 		}
+	}
+}
+
+.input_box-2 {
+	@extend .input_box;
+	text-align: left;
+	height: 40px;
+}
+
+.input_box_inb-1 {
+	display: inline-block;
+	vertical-align: baseline;
+	width: 137px;
+}
+
+.input_box_captcha {
+	display: inline-block;
+	width: 140px;
+	height: 40px;
+	background: #e4e5e7;
+	border: 1px solid $slate;
+	position: relative;
+	bottom: 4px;
+	vertical-align: middle;
+	img {
+		border: 0;
+		width: 140px;
+		height: 40px;
+		display: block;
 	}
 }
